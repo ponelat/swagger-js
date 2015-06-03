@@ -61,6 +61,7 @@
     "nock": "^2.0.1",
     "object.assign": "^3.0.0",
     "selenium-webdriver": "^2.45.1",
+    "sinon": "^1.14.1",
     "uglifyify": "^3.0.1",
     "unit.js": "^2.0.0",
     "vinyl-source-stream": "^1.1.0"
