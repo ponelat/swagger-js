@@ -44,7 +44,7 @@ describe('2.0 authorizations', function () {
       }
     });
 
-    expect(client.clientAuthorizations.authz.someAuth).to.equal(auth);
+    expect(client.authorizations.someAuth).to.equal(auth);
 
   });
 
@@ -78,12 +78,7 @@ describe('2.0 authorizations', function () {
 
   });
 
-  it('should have clientAuthorizations instantiated before #initialize', function(){
-    var client = new Swagger(); // don't initialize here, no-args
-    expect(client.clientAuthorizations).to.respondTo('add'); // ie: it has an 'add' function
-  });
-
-  it('applies an api key to the query string', function () {
+  it.only('applies an api key to the query string', function () {
     var params = { petId: 1 };
     var opts = {
       responseContentType: 'application/json',
@@ -91,7 +86,7 @@ describe('2.0 authorizations', function () {
     };
     var auth = new Swagger.ApiKeyAuthorization('api_key', 'abc123', 'query');
 
-    petstore.clientAuthorizations.add('api_key', auth);
+    petstore.authorizations.api_key = auth;
 
     var petApi = petstore.pet;
     var req = petApi.getPetById(params, opts);
