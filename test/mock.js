@@ -80,7 +80,7 @@ exports.petstore = function (arg1, arg2, arg3, arg4) {
 
           return;
         } else {
-          res.writeHead(200, {'Content-Type': 'text/plain'});
+          res.writeHead(200, {'Content-Type': 'text/plain'}); // ??????? status == 200 ????
           res.write('404 Not Found\n');
           res.end();
         }
